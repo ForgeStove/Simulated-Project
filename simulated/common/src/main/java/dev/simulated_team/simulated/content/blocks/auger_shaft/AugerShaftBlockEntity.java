@@ -323,7 +323,7 @@ public class AugerShaftBlockEntity extends KineticBlockEntity implements ItemRec
 
     @Override
     public boolean addToGoggleTooltip(final List<Component> tooltip, final boolean isPlayerSneaking) {
-        super.addToGoggleTooltip(tooltip, isPlayerSneaking);
+        var added = super.addToGoggleTooltip(tooltip, isPlayerSneaking);
 
         if (this.getSpeed() > 0) {
             final float perTickSpeed = this.getItemSpeed();
@@ -349,7 +349,7 @@ public class AugerShaftBlockEntity extends KineticBlockEntity implements ItemRec
         }
 
         this.observed = true;
-        return true;
+        return added;
     }
 
     @Override
